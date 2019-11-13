@@ -41,7 +41,6 @@ namespace LukashynBinaryTree
                         {
                             currentElement = currentElement.NextElement;
                         }
-
                     }
                 }
             }
@@ -54,7 +53,7 @@ namespace LukashynBinaryTree
 
         public BinaryTreeElement<T> FindElement(T value)
         {
-            BinaryTreeElement<T> currentElement = RootElement;
+            var currentElement = RootElement;
             while (true)
             {
                 if (currentElement.Value.CompareTo(value) == 0)
