@@ -18,30 +18,28 @@ namespace LukashynBinaryTree
                 var currentElement = RootElement;
                 while (true)
                 {
-                    if (newElement.Data.CompareTo(currentElement.Data)<0)
+                    if (newElement.Value.CompareTo(currentElement.Value)<0)
                     {
-                        if (currentElement.LeftChildElement == null)
+                        if (currentElement.PrevElement == null)
                         {
-                            newElement.ParentElement = currentElement;
-                            currentElement.LeftChildElement = newElement;                            
+                            currentElement.PrevElement = newElement;                            
                             return;
                         }
                         else
                         {
-                            currentElement = currentElement.LeftChildElement;
+                            currentElement = currentElement.PrevElement;
                         }
                     }
                     else
                     {
-                        if (currentElement.RightChildElement == null)
+                        if (currentElement.NextElement == null)
                         {
-                            newElement.ParentElement = currentElement;
-                            currentElement.RightChildElement = newElement;                            
+                            currentElement.NextElement = newElement;                            
                             return;
                         }
                         else
                         {
-                            currentElement = currentElement.RightChildElement;
+                            currentElement = currentElement.NextElement;
                         }
 
                     }

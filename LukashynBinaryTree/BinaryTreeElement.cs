@@ -4,38 +4,28 @@ namespace LukashynBinaryTree
 {
     public class BinaryTreeElement<T> where T : IComparable
     {
-        public T Data { get; set; }
-        public BinaryTreeElement<T> ParentElement { get; internal set; }
-        public BinaryTreeElement<T> LeftChildElement { get; internal set; }
-        public BinaryTreeElement<T> RightChildElement { get; internal set; }
+        public T Value { get; set; }
+        /// <summary>
+        /// A reference to a child node whose value is less than the parent
+        /// </summary>
+        public BinaryTreeElement<T> PrevElement { get; internal set; }
+        /// <summary>
+        /// A reference to a child node whose value is equal to or greater than the parent
+        /// </summary>
+        public BinaryTreeElement<T> NextElement { get; internal set; }
 
         public BinaryTreeElement(T input)
         {
-            Data = input;
+            Value = input;
         }
 
-        public Side? GetNodeSide()
-        {
-            if (ParentElement == null)
-            {
-                return null;
-            }
-            else if (ParentElement.LeftChildElement == this)
-            {
-                return Side.Left;
-            }
-            else
-            {
-                return Side.Right;
-            }
-        }
         public override string ToString()
         {
-            return Data.ToString();
+            return Value.ToString();
         }
         public void Print()
         {
-            Console.WriteLine(Data);
+            Console.WriteLine(Value);
         }
 
     }
