@@ -47,16 +47,17 @@ namespace LukashynBinaryTree
                 }
             }
         }
+
         public void AddElement(T value)
         {
             AddElement(new BinaryTreeElement<T>(value));
         }
-        public BinaryTreeElement<T> FindElement(T value)
+
+        public static BinaryTreeElement<T> FindElement(BinaryTree<T> tree, T value)
         {
-            Console.WriteLine("Start of binary search");
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            var currentElement = RootElement;
+            var currentElement = tree.RootElement;
             while (true)
             {
                 if (currentElement.Value.CompareTo(value) == 0)

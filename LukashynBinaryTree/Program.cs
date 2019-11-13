@@ -15,7 +15,7 @@ namespace LukashynBinaryTree
 
             try
             {
-                var res = tree.FindElement(50);
+                var res = BinaryTree<int>.FindElement(tree, 50);
                 Console.WriteLine($"Element was found. Value: {res.Value};\nPrevious element: {res.PrevElement};\nNext element: {res.NextElement}.");
             }
             catch (Exception e)
