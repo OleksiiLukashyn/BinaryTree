@@ -11,7 +11,7 @@ namespace LukashynBinaryTree
             BinaryTree<int> tree = new BinaryTree<int>();
             for (int i = 0; i < 100000; i++)
             {
-                tree.AddElement(rand.Next(-100000, 100000));
+                tree.AddElement(rand.Next(-10000, 10000));
             }
 
             Stopwatch stopWatch = new Stopwatch();
