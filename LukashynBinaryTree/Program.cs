@@ -22,7 +22,7 @@ namespace LukashynBinaryTree
                 var res = tree.FindElement(50);
                 stopWatch.Stop();
                 Console.WriteLine("Runtime: " + stopWatch.Elapsed);
-                Console.WriteLine($"Element was found. Value: {res.Value};\nPrevious element: {res.PrevElement};\nNext element: {res.NextElement}.");
+                Console.WriteLine($"Element was found. Value: {res};\nPrevious element: {res.PrevElement};\nNext element: {res.NextElement}.");
             }
             catch (Exception e)
             {

@@ -1,10 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LukashynBinaryTree
 {
     public class BinaryTree<T> where T : IComparable
     {
         public BinaryTreeElement<T> RootElement { get; private set; }
+
+        public BinaryTree()
+        {
+        }
+        public BinaryTree(IEnumerable<T> collection)
+        {
+            foreach (var item in collection)
+            {
+                AddElement(item);
+            }
+        }
 
         public void AddElement(BinaryTreeElement<T> newElement)
         {
@@ -64,7 +76,7 @@ namespace LukashynBinaryTree
                 {
                     currentElement = currentElement.PrevElement;
                 }
-                else if (currentElement.NextElement != null)
+                else if (currentElement.Value.CompareTo(value) < 0 && currentElement.NextElement != null)
                 {
                     currentElement = currentElement.NextElement;
                 }
