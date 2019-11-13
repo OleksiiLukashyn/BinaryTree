@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace LukashynBinaryTree
 {
@@ -53,17 +52,13 @@ namespace LukashynBinaryTree
             AddElement(new BinaryTreeElement<T>(value));
         }
 
-        public static BinaryTreeElement<T> FindElement(BinaryTree<T> tree, T value)
+        public BinaryTreeElement<T> FindElement(T value)
         {
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-            var currentElement = tree.RootElement;
+            BinaryTreeElement<T> currentElement = RootElement;
             while (true)
             {
                 if (currentElement.Value.CompareTo(value) == 0)
                 {
-                    stopWatch.Stop();
-                    Console.WriteLine("Binary search completed successfully. RunTime: " + stopWatch.Elapsed);
                     return currentElement;
                 }
                 else if (currentElement.Value.CompareTo(value) > 0 && currentElement.PrevElement != null)
@@ -76,8 +71,6 @@ namespace LukashynBinaryTree
                 }
                 else
                 {
-                    stopWatch.Stop();
-                    Console.WriteLine("Element not found. RunTime: " + stopWatch.Elapsed);
                     throw new NullReferenceException("Search for this object in the binary tree did not return any results.");
                 }
             }

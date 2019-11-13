@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace LukashynBinaryTree
 {
@@ -10,16 +11,23 @@ namespace LukashynBinaryTree
             BinaryTree<int> tree = new BinaryTree<int>();
             for (int i = 0; i < 100000; i++)
             {
-                tree.AddElement(rand.Next(-1000,1000));
+                tree.AddElement(rand.Next(-100000, 100000));
             }
+
+            Stopwatch stopWatch = new Stopwatch();
 
             try
             {
-                var res = BinaryTree<int>.FindElement(tree, 50);
+                stopWatch.Start();
+                var res = tree.FindElement(50);
+                stopWatch.Stop();
+                Console.WriteLine("Runtime: " + stopWatch.Elapsed);
                 Console.WriteLine($"Element was found. Value: {res.Value};\nPrevious element: {res.PrevElement};\nNext element: {res.NextElement}.");
             }
             catch (Exception e)
             {
+                stopWatch.Stop();
+                Console.WriteLine("Runtime: " + stopWatch.Elapsed);
                 Console.WriteLine(e.Message);
             }
         }
