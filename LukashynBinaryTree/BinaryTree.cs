@@ -62,8 +62,7 @@ namespace LukashynBinaryTree
                 if (currentElement.Value.CompareTo(value) == 0)
                 {
                     stopWatch.Stop();
-                    TimeSpan ts = stopWatch.Elapsed;
-                    Console.WriteLine("Binary search completed successfully. RunTime: " + ts);
+                    Console.WriteLine("Binary search completed successfully. RunTime: " + stopWatch.Elapsed);
                     return currentElement;
                 }
                 else if (currentElement.Value.CompareTo(value) > 0 && currentElement.PrevElement != null)
@@ -77,8 +76,7 @@ namespace LukashynBinaryTree
                 else
                 {
                     stopWatch.Stop();
-                    TimeSpan ts = stopWatch.Elapsed;
-                    Console.WriteLine("Element not found. RunTime: " + ts);
+                    Console.WriteLine("Element not found. RunTime: " + stopWatch.Elapsed);
                     throw new NullReferenceException("Search for this object in the binary tree did not return any results.");
                 }
             }
