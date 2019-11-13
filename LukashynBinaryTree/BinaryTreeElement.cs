@@ -23,10 +23,5 @@ namespace LukashynBinaryTree
         {
             return Value.ToString();
         }
-        public void Print()
-        {
-            Console.WriteLine(Value);
-        }
-
     }
 }
