@@ -82,7 +82,7 @@ namespace LukashynBinaryTree
                 }
                 else
                 {
-                    throw new NullReferenceException("Search for this object in the binary tree did not return any results.");
+                    throw new ArgumentException("Search for this object in the binary tree did not return any results.");
                 }
             }
         }

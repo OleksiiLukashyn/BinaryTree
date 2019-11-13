@@ -24,7 +24,7 @@ namespace LukashynBinaryTree
                 Console.WriteLine("Runtime: " + stopWatch.Elapsed);
                 Console.WriteLine($"Element was found. Value: {res};\nPrevious element: {res.PrevElement};\nNext element: {res.NextElement}.");
             }
-            catch (Exception e)
+            catch (ArgumentException e)
             {
                 stopWatch.Stop();
                 Console.WriteLine("Runtime: " + stopWatch.Elapsed);
