@@ -23,7 +23,6 @@ namespace LukashynBinaryTree
             if (RootElement == null)
             {
                 RootElement = newElement;
-                return;
             }
             else
             {
@@ -37,10 +36,8 @@ namespace LukashynBinaryTree
                             currentElement.PrevElement = newElement;
                             return;
                         }
-                        else
-                        {
-                            currentElement = currentElement.PrevElement;
-                        }
+
+                        currentElement = currentElement.PrevElement;
                     }
                     else
                     {
@@ -49,10 +46,8 @@ namespace LukashynBinaryTree
                             currentElement.NextElement = newElement;
                             return;
                         }
-                        else
-                        {
-                            currentElement = currentElement.NextElement;
-                        }
+
+                        currentElement = currentElement.NextElement;
                     }
                 }
             }
@@ -72,7 +67,8 @@ namespace LukashynBinaryTree
                 {
                     return currentElement;
                 }
-                else if (currentElement.Value.CompareTo(value) > 0 && currentElement.PrevElement != null)
+
+                if (currentElement.Value.CompareTo(value) > 0 && currentElement.PrevElement != null)
                 {
                     currentElement = currentElement.PrevElement;
                 }

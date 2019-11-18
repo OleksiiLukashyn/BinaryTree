@@ -3,18 +3,18 @@ using System.Diagnostics;
 
 namespace LukashynBinaryTree
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             var rand = new Random();
-            BinaryTree<int> tree = new BinaryTree<int>();
-            for (int i = 0; i < 100000; i++)
+            var tree = new BinaryTree<int>();
+            for (var i = 0; i < 100000; i++)
             {
                 tree.AddElement(rand.Next(-10000, 10000));
             }
 
-            Stopwatch stopWatch = new Stopwatch();
+            var stopWatch = new Stopwatch();
 
             try
             {
